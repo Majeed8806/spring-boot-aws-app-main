@@ -8,12 +8,12 @@ pipeline {
             }
         }
 
-      /*  stage('unit test') {
+        stage('unit test') {
             steps {
                sh 'mvn test'
             }
         }
-        stage('test 2') {
+       /* stage('test 2') {
             steps {
                sh 'mvn verify -DskipUnitTests'
             }
