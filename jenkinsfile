@@ -23,6 +23,15 @@ pipeline {
                sh 'mvn clean install'
                }
            }
+        stage('sonarqube') {
+            steps {
+               parameters {
+                 credentials credentialType: 'org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl', defaultValue: 'sonarqubetoken', name: 'sonarqube', required: false
+                     }
+                 sh 'mvn sonar:sonar'
+               }
+           }
+
 
     }
 }
