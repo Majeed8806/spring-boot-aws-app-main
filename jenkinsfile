@@ -40,7 +40,7 @@ pipeline {
                }
              }
           }
-               stage('update to nexus') {
+              /* stage('update to nexus') {
             steps {
                  script{
                          def readPomVersion = readMavenPom file: 'pom.xml'
@@ -56,6 +56,6 @@ pipeline {
                       
 }
 }
-}
+}*/
     }
 }
