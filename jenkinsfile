@@ -25,7 +25,7 @@ pipeline {
            }
         stage('sonarqube') {
             steps {
-               withCredentials([string(credentialsId: 'sonarqubetoken', variable: 'sonarqube')]) {
+               withCredentials([string(credentialsId: 'sonarqubetoken', variable: 'admin')]) {
     // some block
                 }
                  sh 'mvn sonar:sonar'
