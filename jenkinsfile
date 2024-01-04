@@ -12,7 +12,7 @@ pipeline {
                sh 'mvn test'
             }
         }
-        stage('test 2') {
+        stage('Integration test') {
             steps {
                sh 'mvn verify -DskipUnitTests'
             }
@@ -22,7 +22,7 @@ pipeline {
                sh 'mvn clean install'
                }
            }
-        stage('sonarqube') {
+        stage('sonarqube code analysis') {
             steps {
                  script{
                withSonarQubeEnv(credentialsId: 'sonarqubetoken') {
@@ -71,7 +71,7 @@ pipeline {
                          steps {
                             script{
                        withCredentials([string(credentialsId: 'dockerhubpasswd', variable: 'dockerhub')]) {
-                              sh 'docker login -u majieeds@gmail.com -p ${"dockerhub"}'
+                              sh 'docker login -u majieeds@gmail.com -p ${dockerhub}'
                               sh 'docker image push majeed8806/$JOB_NAME:v1.$BUILD_ID'
                              }        
 
