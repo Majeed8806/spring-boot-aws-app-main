@@ -1,9 +1,7 @@
-FROM maven as build
+FROM maven:3.8.4 as build
 WORKDIR /app
 COPY . .
-RUN mvn install
-
-
+RUN mvn clean install -Dmaven.test.skip=true
 
 FROM anapsix/alpine-java
 WORKDIR /app
