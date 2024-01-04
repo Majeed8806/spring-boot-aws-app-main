@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('git checkout') {
+            steps {
+               git 'https://github.com/Majeed8806/spring-boot-aws-app-main.git'
+            }
+        }
+
+      /*  stage('unit test') {
+            steps {
+               sh 'mvn test'
+            }
+        }
+        stage('test 2') {
+            steps {
+               sh 'mvn verify -DskipUnitTests'
+            }
+        }*/
+
+    }
+}
