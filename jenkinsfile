@@ -25,12 +25,13 @@ pipeline {
            }
         stage('sonarqube') {
             steps {
+                 script{
                withSonarQubeEnv(credentialsId: 'sonarqubetoken') {
                  }
                  sh 'mvn clean sonar:sonar'
                }
            }
-
+          }
 
     }
 }
