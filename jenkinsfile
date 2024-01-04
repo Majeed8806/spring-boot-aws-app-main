@@ -55,8 +55,18 @@ pipeline {
                                repository: nexusRepo, 
                                version: "${readPomVersion.version}"
                       
-}
-}
-}
-    }
+                          }
+                         }
+                      }
+                      stage('create docker image') {
+                         steps {
+                            script{
+                                sh 'docker build -t majeed8806/$JOB_NAME:v1.$BUILD_ID .'
+
+               }
+             }
+          }
+
+
+     }
 }
