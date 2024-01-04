@@ -3,7 +3,7 @@ WORKDIR /app
 COPY . .
 RUN mvn install
 
----
+
 
 FROM anapsix/alpine-java
 WORKDIR /app
