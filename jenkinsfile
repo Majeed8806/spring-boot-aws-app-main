@@ -25,9 +25,9 @@ pipeline {
            }
         stage('sonarqube') {
             steps {
-               parameters {
-                 credentials credentialType: 'org.jenkinsci.plugins.plaincredentials.impl.StringCredentialsImpl', defaultValue: 'sonarqubetoken', name: 'sonarqube', required: false
-                     }
+               withCredentials([string(credentialsId: 'sonarqubetoken', variable: 'sonarqube')]) {
+    // some block
+                }
                  sh 'mvn sonar:sonar'
                }
            }
