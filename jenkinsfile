@@ -67,7 +67,7 @@ pipeline {
              }
           }
 
-                       stage('create docker image') {
+                       stage(' docker image push') {
                          steps {
                             script{
                        withCredentials([string(credentialsId: 'dockerhubpasswd', variable: 'dockerhub')]) {
