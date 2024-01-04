@@ -40,7 +40,7 @@ pipeline {
                }
              }
           }
-              /* stage('update to nexus') {
+               stage('update to nexus') {
             steps {
                  script{
                          def readPomVersion = readMavenPom file: 'pom.xml'
@@ -48,7 +48,7 @@ pipeline {
                               [[artifactId: 'demo-app', classifier: '', file: 'target/demo-app.jar', type: 'jar']],
                                credentialsId: 'nexus', 
                                groupId: 'com.example', 
-                               nexusUrl: '15.207.249.187:8081', 
+                               nexusUrl: '13.233.96.42:8081', 
                                nexusVersion: 'nexus2',
                                protocol: 'http', 
                                repository: 'demo-release', 
@@ -56,6 +56,6 @@ pipeline {
                       
 }
 }
-}*/
+}
     }
 }
